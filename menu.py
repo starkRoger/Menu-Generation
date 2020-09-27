@@ -19,5 +19,12 @@ f= os.popen("docker registry ls").read()
 for i in f:
      print("<option>{}</option>".format(i))
 print("</select>")
+print("<label for = 'docker'>Choose a docker Images</label>")
+print("<select>")
+import os
+f= os.popen("docker images -a").read()
+for i in f:
+     print("<option>{}</option>".format(i))
+print("</select>")
 print("""</body>
         </html>""")
